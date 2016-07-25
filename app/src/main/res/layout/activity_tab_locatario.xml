@@ -1,0 +1,28 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context="br.com.goteirapp.roomatch.TabLocatarioActivity">
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="75sp" android:gravity="center_horizontal"
+
+        android:alpha="0.3"
+        android:text="@string/app_placeholder" />
+
+    <RelativeLayout
+        android:id="@+id/global_container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="#FFFFFF">
+
+        <com.andtinder.view.CardContainer
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/viewCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        </RelativeLayout>
+</RelativeLayout>

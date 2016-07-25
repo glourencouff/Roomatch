@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Roomatch</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_cadastro">CadastroActivity</string>
+    <string name="app_placeholder">Roomatch</string>
+    <string name="title_activity_locador_cadastro">LocadorCadastroActivity</string>
+    <string name="title_activity_tab_locatario">TabLocatarioActivity</string>
+    <string name="title_activity_candidatos">CandidatosActivity</string>
+    <string name="title_activity_locatario_match">LocatarioMatchActivity</string>
+    <string name="title_activity_pop_pup_filtos">pop_pup_filtos</string>
+    <string name="title_activity_login">Login</string>
+</resources>

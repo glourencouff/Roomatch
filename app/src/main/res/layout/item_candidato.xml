@@ -1,0 +1,48 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#ffffff"
+    android:padding="5sp">
+    <TextView
+        android:id="@+id/tvNomeUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:textSize="17sp"
+        android:layout_marginLeft="5sp"
+        android:layout_alignParentLeft="true"
+        android:textColor="#FF000000"
+        android:text="Placeholder"
+        />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true">
+
+            <ImageView
+                android:id="@+id/ivLike"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/like_default"
+                android:layout_alignLeft="@+id/ivDislike"
+                android:onClick="curtir" />
+
+
+            <ImageView
+                android:id="@+id/ivDislike"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/disliked"
+                android:layout_alignParentRight="true"
+                />
+        </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

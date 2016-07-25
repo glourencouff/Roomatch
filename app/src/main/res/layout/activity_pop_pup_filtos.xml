@@ -1,0 +1,152 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rounder_corner_edit"
+    tools:context="br.com.goteirapp.roomatch.Pop_pup_filtos"
+    >
+
+
+        <RelativeLayout
+            android:id="@+id/popup_rl_filtros"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/popup_cbMobiliado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#33b5e5"
+                android:text="Mobiliado"
+                android:textColor="#33b5e5"
+                android:textSize="18sp"
+                android:buttonTint="#33b5e5"/>
+
+            <RelativeLayout
+                android:layout_below="@+id/popup_cbMobiliado"
+                android:id="@+id/popup_rl_radio_groups"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/popup_sexoVaga"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#33b5e5"
+                        android:textSize="17sp"
+                        android:text="Vaga: "/>
+
+                    <RadioButton
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Masculina"
+                        android:textColor="#33b5e5"
+                        android:id="@+id/popup_rbMasculina"
+                        android:textSize="14sp"
+                        android:buttonTint="#33b5e5"
+                        android:visibility="visible" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Feminina"
+                        android:buttonTint="#33b5e5"
+                        android:textColor="#33b5e5"
+                        android:textSize="14sp"
+                        android:id="@+id/popup_rbFeminina" />
+                </RadioGroup>
+
+                <RadioGroup
+                    android:id="@+id/popup_TipoMoradia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center_horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#33b5e5"
+                        android:textSize="17sp"
+                        android:text="Tipo:"/>
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Casa"
+                        android:textColor="#33b5e5"
+                        android:id="@+id/popup_rbCasa"
+                        android:textSize="14sp"
+                        android:buttonTint="#33b5e5"
+                        android:visibility="visible" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Apartamento"
+                        android:buttonTint="#33b5e5"
+                        android:textColor="#33b5e5"
+                        android:textSize="14sp"
+                        android:id="@+id/popup_rbApartamento" />
+                </RadioGroup>
+
+
+
+
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/popup_rl_radio_groups">
+                <com.appyvet.rangebar.RangeBar
+
+                    xmlns:custom="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/popup_rangebar"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    custom:tickStart="350"
+                    custom:connectingLineColor="#33b5e5"
+                    custom:tickColor="#33b5e5"
+                    custom:pinColor="#33b5e5"
+                    custom:selectorColor="#33b5e5"
+                    custom:selectorSize="8dp"
+                    custom:tickInterval="50"
+                    custom:tickEnd="1500"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:text="Salvar"
+        android:onClick="retornarFiltros"
+        android:background="@drawable/rounder_corner"
+        android:layout_gravity="bottom|center_horizontal"/>
+
+
+</RelativeLayout>

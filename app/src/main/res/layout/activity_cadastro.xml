@@ -1,0 +1,180 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.goteirapp.roomatch.CadastroActivity"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="70sp" android:gravity="center_horizontal"
+        android:background="#FFFFFF"
+        android:paddingTop="40dp"
+        android:text="@string/app_placeholder" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingTop="110dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:layout_gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <EditText
+                    android:paddingLeft="15dp"
+                    android:id="@+id/etNome"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center"
+                    android:alpha="0.8"
+                    android:hint="Nome"
+                    android:background="@drawable/rounder_corner_edit"
+                    android:textColor="#000000"
+                    android:textColorHint="@android:color/darker_gray"/>
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    android:paddingLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_gravity="center"
+                    android:alpha="0.8"
+                    android:textColor="#000000"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:hint="Email"
+                    android:background="@drawable/rounder_corner_edit"/>
+
+                <EditText
+                    android:id="@+id/etSenha"
+                    android:paddingLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:inputType="textPassword"
+                    android:alpha="0.8"
+                    android:textColor="#000000"
+                    android:textColorHint="@android:color/darker_gray"
+                    android:hint="Password"
+                    android:background="@drawable/rounder_corner_edit"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/rgTipoPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="40dp"
+                    android:paddingBottom="40dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Locador"
+                        android:textColor="#33b5e5"
+                        android:id="@+id/cadastro_rbLocador"
+                        android:textSize="20sp"
+                        android:layout_marginRight="40dp"
+                        android:buttonTint="#33b5e5"
+                        android:visibility="visible" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Locatário"
+                        android:buttonTint="#33b5e5"
+                        android:textColor="#33b5e5"
+                        android:textSize="20sp"
+                        android:id="@+id/cadastro_rbLocatario"
+                        android:checked="false" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/llPopUpFiltros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/rounder_corner_edit"
+                    android:layout_gravity="center_horizontal">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icone_filtros"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="30sp"
+                        android:text="Filtros de busca"
+                        android:layout_gravity="center_horizontal"
+                        android:onClick="abrirPopUp"
+                        android:textColor="#33b5e5"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/llFiltrosLembrete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/important"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#CCCCCC"
+                android:layout_gravity="center_vertical"
+                android:text="Filtros modificados, atualize seu cadastro!"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_alignWithParentIfMissing="true"
+            android:id="@+id/tvLogin"
+            android:layout_width="200dp"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:paddingBottom="4dp"
+            android:text="Cadastrar"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rounder_corner"
+            android:onClick="cadastroUsuario"/>
+    </LinearLayout>
+
+
+
+
+</FrameLayout>

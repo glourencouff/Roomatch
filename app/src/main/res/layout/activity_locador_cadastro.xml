@@ -1,0 +1,207 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.com.goteirapp.roomatch.CadastroActivity"
+    android:background="#FFFFFF"
+    android:orientation="vertical">
+
+    <TextView android:id="@+id/fullscreen_content" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:keepScreenOn="true" android:textColor="#33b5e5"
+        android:textStyle="bold" android:textSize="75sp" android:gravity="center_horizontal"
+
+        android:alpha="0.3"
+        android:text="@string/app_placeholder" />
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true"
+            android:layout_gravity="bottom">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="70dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_marginBottom="30dp">
+
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#33b5e5"
+                        android:text="Valor: "
+                        android:layout_gravity="center_vertical"
+                        android:textSize="15sp"/>
+
+                    <EditText
+                        android:paddingLeft="15dp"
+                        android:id="@+id/etValor"
+                        android:layout_width="100dp"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="10dp"
+                        android:alpha="0.8"
+                        android:background="@drawable/rounder_corner_edit"
+                        android:textColor="#000000"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:inputType="number|numberDecimal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#33b5e5"
+                        android:text="Descrição: "
+                        android:layout_marginTop="5dp"
+                        android:textSize="15sp"/>
+                    <EditText
+                        android:id="@+id/etDescricao"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:alpha="0.8"
+                        android:textColor="#000000"
+                        android:textColorHint="@android:color/darker_gray"
+                        android:background="@drawable/rounder_corner_edit"
+                        android:inputType="textMultiLine" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#33b5e5"
+                    android:text="Mobiliado"
+                    android:textColor="#33b5e5"
+                    android:textSize="20sp"
+                    android:buttonTint="#33b5e5"
+                    android:checked="false"
+                    android:id="@+id/cbVagaMobiliada" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:orientation="vertical"
+                        android:id="@+id/sexoVaga"
+                        android:layout_gravity="start|center_horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#33b5e5"
+                            android:textSize="20sp"
+                            android:text="Vaga: "/>
+
+                        <RadioButton
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Masculina"
+                            android:textColor="#33b5e5"
+                            android:id="@+id/locador_rbMasculina"
+                            android:textSize="20sp"
+                            android:layout_marginRight="20dp"
+                            android:buttonTint="#33b5e5"
+                            android:visibility="visible" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Feminina"
+                            android:buttonTint="#33b5e5"
+                            android:textColor="#33b5e5"
+                            android:textSize="20sp"
+                            android:id="@+id/locador_rbFeminina" />
+                    </RadioGroup>
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:paddingTop="10dp"
+                        android:orientation="vertical"
+                        android:id="@+id/rbTipoMoradia"
+                        android:layout_gravity="start|center_horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#33b5e5"
+                            android:textSize="20sp"
+                            android:text="Tipo:"/>
+
+                        <RadioButton
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Casa"
+                            android:textColor="#33b5e5"
+                            android:id="@+id/locador_rbCasa"
+                            android:textSize="20sp"
+                            android:layout_marginRight="40dp"
+                            android:buttonTint="#33b5e5"
+                            android:visibility="visible" />
+
+                        <RadioButton
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Apartamento"
+                            android:buttonTint="#33b5e5"
+                            android:textColor="#33b5e5"
+                            android:textSize="20sp"
+                            android:id="@+id/locador_rbApartamento" />
+                    </RadioGroup>
+
+
+                </LinearLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="200dp"
+            android:gravity="bottom|center_horizontal"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold" android:textSize="30sp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@drawable/rounder_corner"
+            android:onClick="cadastroLocador"/>
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>
