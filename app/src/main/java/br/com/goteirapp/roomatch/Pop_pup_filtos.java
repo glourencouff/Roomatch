@@ -3,7 +3,6 @@ package br.com.goteirapp.roomatch;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -28,16 +27,8 @@ public class Pop_pup_filtos extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pop_pup_filtos);
-
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-
         filtroController = new FiltroController(getBaseContext());
 
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-
-        getWindow().setLayout((int)(width*0.8),(int)(height*0.8));
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {

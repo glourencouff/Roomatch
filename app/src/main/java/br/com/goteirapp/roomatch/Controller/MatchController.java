@@ -78,13 +78,15 @@ public class MatchController {
             if (cursor.getCount() > 0) {
                 cursor.moveToFirst();
                 do{
-                    Match match = new Match();
-                    match.setId(cursor.getInt(0));
-                    match.setIdVaga(cursor.getInt(1));
-                    match.setIdLocatario(cursor.getInt(2));
-                    match.setMatchValidation(cursor.getInt(4));
-                    match.setIdLocador(3);
-                    matches.add(match); //Pega lista de usuários que curtiram vagas do locador
+                    if(cursor.getInt(4) != 0) {
+                        Match match = new Match();
+                        match.setId(cursor.getInt(0));
+                        match.setIdVaga(cursor.getInt(1));
+                        match.setIdLocatario(cursor.getInt(2));
+                        match.setMatchValidation(cursor.getInt(4));
+                        match.setIdLocador(3);
+                        matches.add(match); //Pega lista de usuários que curtiram vagas do locador
+                    }
                 }while (cursor.moveToNext());
             }
 

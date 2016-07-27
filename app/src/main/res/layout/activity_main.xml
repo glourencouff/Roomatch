@@ -19,7 +19,7 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="wrap_content"
                 android:backgroundTint="#33b5e5"
                 android:background="#33b5e5"></TabWidget>
 

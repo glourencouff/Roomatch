@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -63,6 +65,7 @@ public class TabLocatarioActivity extends Activity {
 
         CardContainer mCardContainer = (CardContainer) findViewById(R.id.viewCard);
         mCardContainer.setOrientation(Orientations.Orientation.Ordered);
+
         SimpleCardStackAdapter adapter = new SimpleCardStackAdapter(this);
 
         UsuarioController usuarioController = new UsuarioController(getBaseContext());
@@ -70,7 +73,11 @@ public class TabLocatarioActivity extends Activity {
             final Vaga vaga = vagas.get(i);
 
             Usuario usuario = usuarioController.getUsuario(vaga.getLocador());
+
+
             CardModel card = new CardModel(usuario.getNome(), String.valueOf(vaga.getVagaValor()), ResourcesCompat.getDrawable(getResources(), R.drawable.picture1, null));
+
+
 
             card.setOnCardDimissedListener(new CardModel.OnCardDimissedListener() {
                 @Override

@@ -41,7 +41,7 @@ public class CandidatosActivity extends Activity {
         List<Match> matches = matchController.getUsersVaga(Integer.valueOf(usuarioLogado.getId()));
 
 
-          lvCandidatos=(ListView) findViewById(R.id.lvCandidatos);
+        lvCandidatos=(ListView) findViewById(R.id.lvCandidatos);
         lvCandidatos.setAdapter(new AdapterCandidatoListView(this, matches,usuarioLogado,matchController,vagaController,usuarioController));
 
 

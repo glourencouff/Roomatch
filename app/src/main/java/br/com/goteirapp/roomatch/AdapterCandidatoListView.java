@@ -83,6 +83,9 @@ public class AdapterCandidatoListView extends BaseAdapter {
                 auxCandidato.imgLike.setImageResource(R.drawable.liked);
             }
 
+
+                       
+
             auxCandidato.imgLike.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -96,9 +99,23 @@ public class AdapterCandidatoListView extends BaseAdapter {
 
                         }else{
                             Toast.makeText(context, "Ops..ocorreu um erro", Toast.LENGTH_SHORT).show();
+
                         }
                     }
 
+                }
+            });
+            final int currentPosition = position;
+            final  Match matchDelete = itens.get(currentPosition);
+            auxCandidato.imgDislike.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    
+                    Boolean resultado  =  matchController.updateMatch(match.getIdLocatario(), match.getIdVaga(), 0);
+                    removeItem(matchDelete);
+                    if(resultado) {
+                        Toast.makeText(context, "Nao curti :(.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             });
 
@@ -114,6 +131,13 @@ public class AdapterCandidatoListView extends BaseAdapter {
 
 
         return view;
+    }
+
+    private void removeItem(Match aux) {
+
+        itens.remove(aux);
+        notifyDataSetChanged();
+
     }
 
 
