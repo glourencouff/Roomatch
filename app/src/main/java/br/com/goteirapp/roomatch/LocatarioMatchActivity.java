@@ -12,11 +12,12 @@ import java.util.List;
 import br.com.goteirapp.roomatch.Controller.MatchController;
 import br.com.goteirapp.roomatch.Controller.UsuarioController;
 import br.com.goteirapp.roomatch.Controller.VagaController;
+import br.com.goteirapp.roomatch.model.Match;
 import br.com.goteirapp.roomatch.model.Usuario;
 
 public class LocatarioMatchActivity extends AppCompatActivity {
 
-    ListView lvCandidatos;
+    ListView lvMatches;
     MatchController matchController;
     UsuarioController usuarioController;
     VagaController vagaController;
@@ -36,20 +37,20 @@ public class LocatarioMatchActivity extends AppCompatActivity {
             usuarioLogado = new Usuario();
             usuarioLogado = extras.getParcelable("usuario");
         }
-        List<Integer> idUsuarios = matchController.getUsersLike(Integer.valueOf(usuarioLogado.getId()));
-        List<Usuario> usuarios = new ArrayList<Usuario>();
-        if (idUsuarios != null && !idUsuarios.isEmpty()) {
-            for (int i = 0; i < idUsuarios.size(); i++) {
-                Usuario usu = new Usuario();
-                usu = usuarioController.getUsuario(idUsuarios.get(i));
+        List<Match> matches = matchController.getUsersLike(Integer.valueOf(usuarioLogado.getId()));
+        List<Usuario> usuarios = new ArrayList<>();
+        if (matches != null && matches.size() > 0) {
+            for (int i = 0; i < matches.size(); i++) {
+                Usuario usu;
+                usu = usuarioController.getUsuario(matches.get(i).getIdLocador());
                 usuarios.add(usu);
             }
 
         }
 
 
-        lvCandidatos=(ListView) findViewById(R.id.lvCandidatos);
-        //lvCandidatos.setAdapter(new AdapterCandidatoListView(this, usuarios));
+        lvMatches=(ListView) findViewById(R.id.lvMatches);
+        lvMatches.setAdapter(new AdapterMatchListView(this, usuarios));
     }
 
 }

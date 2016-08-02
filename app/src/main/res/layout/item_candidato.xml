@@ -28,12 +28,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/like_default"
-                android:layout_alignLeft="@+id/ivDislike"
+                android:layout_alignLeft="@+id/listaMatch_imgChat"
                 android:onClick="curtir" />
 
 
             <ImageView
-                android:id="@+id/ivDislike"
+                android:id="@+id/listaMatch_imgChat"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/disliked"

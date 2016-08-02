@@ -59,7 +59,6 @@ public class MatchController {
         public List<Match> getUsersVaga(Integer idLocatario) {
             db = banco.getReadableDatabase();
             List<Match> matches = new ArrayList<>();
-            List<Integer> candidatos = new ArrayList();
 
             String[] colunas = new String[]{RoomatchUtil.ID_MATCH,
                     RoomatchUtil.MATCH_ID_VAGA,
@@ -93,10 +92,11 @@ public class MatchController {
             return matches;
         }
 
-        public List getUsersLike(int idLocatario) {
+        public List<Match> getUsersLike(int idLocatario) {
 
             db = banco.getReadableDatabase();
-            List usersLike = new ArrayList();
+
+            List<Match> matches = new ArrayList<>();
 
             String[] colunas = new String[]{RoomatchUtil.ID_MATCH,
                     RoomatchUtil.MATCH_ID_VAGA,
@@ -106,7 +106,7 @@ public class MatchController {
 
             Cursor cursor = db.query(RoomatchUtil.TABELA_MATCH,
                     colunas,
-                    "match_idLocatario = ? and match_validation = 1",
+                    RoomatchUtil.MATCH_ID_LOCATARIO+" = ? and match_validation = 1",
                     new String[]{"" + idLocatario},
                     null,
                     null,
@@ -116,11 +116,19 @@ public class MatchController {
                 cursor.moveToFirst();
 
                 do {
-                     usersLike.add(cursor.getInt(3));
+                    Match match = new Match();
+                    match.setId(cursor.getInt(0));
+                    match.setIdVaga(cursor.getInt(1));
+                    match.setIdLocador(cursor.getInt(3));
+                    match.setIdLocatario(cursor.getInt(2));
+                    match.setMatchValidation(cursor.getInt(4));
+
+                    matches.add(match);
 
                 } while (cursor.moveToNext());
             }
-            return usersLike;
+            db.close();
+            return matches;
         }
 
 
@@ -141,7 +149,7 @@ public class MatchController {
     }
 
     public boolean updateMatch(int idLocatario, int idVaga, int estadoLike){
-        db = banco.getReadableDatabase();
+        db = banco.getWritableDatabase();
 
         String[] colunas = new String[]{RoomatchUtil.ID_MATCH,
                 RoomatchUtil.MATCH_ID_VAGA,

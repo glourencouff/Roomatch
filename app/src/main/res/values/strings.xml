@@ -18,5 +18,7 @@
     <string name="title_activity_candidatos">CandidatosActivity</string>
     <string name="title_activity_locatario_match">LocatarioMatchActivity</string>
     <string name="title_activity_pop_pup_filtos">pop_pup_filtos</string>
-    <string name="title_activity_login">Login</string>
+    <string name="title_activity_login">Roomatch</string>
+    <string name="title_activity_detalha_vaga">DetalhaVagaActivity</string>
+    <string name="title_activity_mapa_cadastro">MapaCadastroActivity</string>
 </resources>

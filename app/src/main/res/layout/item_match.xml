@@ -26,9 +26,10 @@
 
 
         <ImageView
-            android:id="@+id/ivDislike"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:id="@+id/listaMatch_imgChat"
+            android:layout_width="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="40dp"
             android:src="@drawable/disliked"
             android:layout_alignParentRight="true"
             />

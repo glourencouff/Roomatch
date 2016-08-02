@@ -1,6 +1,8 @@
 package br.com.goteirapp.roomatch;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,6 +37,8 @@ public class TabLocatarioActivity extends Activity {
     FiltroController filtroController;
     Usuario usuarioLogado;
     Filtros filtros;
+    static final int DETALHAR_VAGA = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +81,18 @@ public class TabLocatarioActivity extends Activity {
 
             CardModel card = new CardModel(usuario.getNome(), String.valueOf(vaga.getVagaValor()), ResourcesCompat.getDrawable(getResources(), R.drawable.picture1, null));
 
+
+
+
+
+            card.setOnClickListener(new CardModel.OnClickListener() {
+                @Override
+                public void OnClickListener() {
+                    Intent intent = new Intent(TabLocatarioActivity.this,DetalhaVagaActivity.class);
+                    intent.putExtra("vaga",vaga);
+                    startActivityForResult(intent, DETALHAR_VAGA);
+                }
+            });
 
 
             card.setOnCardDimissedListener(new CardModel.OnCardDimissedListener() {
@@ -140,5 +156,15 @@ public class TabLocatarioActivity extends Activity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // CONFERE DE QUAL ACTIVITY VEIO
+        if (requestCode == DETALHAR_VAGA) {
+            // CONFERE CODIGO RETORNOADO
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(getApplicationContext(), "Tela Detalhada", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
 }

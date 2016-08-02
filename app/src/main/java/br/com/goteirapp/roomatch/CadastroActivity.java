@@ -56,23 +56,7 @@ public class CadastroActivity extends AppCompatActivity {
         TextView botao = (TextView) findViewById(R.id.tvLogin);
 
         RadioGroup tipoPerfil = (RadioGroup)findViewById(R.id.rgTipoPerfil);
-        tipoPerfil.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case R.id.cadastro_rbLocador:
-                        llPopUpfiltros.setVisibility(View.GONE);
-                        if (llFiltrosLembrete.getVisibility() == View.VISIBLE){
-                            filtros = null;
-                            llFiltrosLembrete.setVisibility(View.GONE);
-                            filtroHasChanged = false;
-                        }
-                        break;
-                    default:
-                        llPopUpfiltros.setVisibility(View.VISIBLE);
-                }
-            }
-        });
+
 
 
 
@@ -87,6 +71,9 @@ public class CadastroActivity extends AppCompatActivity {
                 senha.setText(usuarioLogado.getSenha());
 
                 botao.setText("Atualizar");
+
+
+
 
 
 
@@ -105,6 +92,28 @@ public class CadastroActivity extends AppCompatActivity {
             locatario.setChecked(true);
             llPopUpfiltros.setVisibility(View.GONE);
         }
+
+
+        tipoPerfil.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId) {
+                    case R.id.cadastro_rbLocador:
+                        llPopUpfiltros.setVisibility(View.GONE);
+                        if (llFiltrosLembrete.getVisibility() == View.VISIBLE){
+                            filtros = null;
+                            llFiltrosLembrete.setVisibility(View.GONE);
+                            filtroHasChanged = false;
+                        }
+                        break;
+                    default:
+                        if(usuarioLogado != null) {
+                            llPopUpfiltros.setVisibility(View.VISIBLE);
+                        }
+                }
+            }
+        });
+
     }
 
 

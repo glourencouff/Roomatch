@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class AdapterMatchListView extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        MatchSuporte auxMatch;
+        final MatchSuporte auxMatch;
         Usuario usuario = itens.get(position);
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -59,9 +60,17 @@ public class AdapterMatchListView extends BaseAdapter {
             //inflar as mesmas informacoes
             auxMatch = new MatchSuporte();
             auxMatch.txtTitle = ((TextView) view.findViewById(R.id.tvNomeUsuario));
-            auxMatch.imgChat = ((ImageView) view.findViewById(R.id.ivLike));
+            auxMatch.imgChat = ((ImageView) view.findViewById(R.id.listaMatch_imgChat));
 
             auxMatch.txtTitle.setText(usuario.getNome());
+            auxMatch.imgChat.setImageResource(R.drawable.chat_usuario);
+
+            auxMatch.imgChat.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "Chat ainda não foi implementado", Toast.LENGTH_SHORT).show();
+                }
+            });
 
             view.setTag(auxMatch);
         } else {

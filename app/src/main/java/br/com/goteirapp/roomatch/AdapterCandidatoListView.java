@@ -75,7 +75,7 @@ public class AdapterCandidatoListView extends BaseAdapter {
             auxCandidato = new CandidatoSuporte();
             auxCandidato.txtTitle = ((TextView) view.findViewById(R.id.tvNomeUsuario));
             auxCandidato.imgLike = ((ImageView) view.findViewById(R.id.ivLike));
-            auxCandidato.imgDislike = ((ImageView) view.findViewById(R.id.ivDislike));
+            auxCandidato.imgDislike = ((ImageView) view.findViewById(R.id.listaMatch_imgChat));
 
             Boolean curtiu = matchController.hasLike(match.getIdLocatario(), match.getIdVaga());
 

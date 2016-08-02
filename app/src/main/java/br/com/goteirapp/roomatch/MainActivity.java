@@ -35,19 +35,24 @@ public class MainActivity extends TabActivity {
                 //PERFIL LOCADOR
                 TabHost.TabSpec tabLocador = tbMain.newTabSpec("Aba Locador");
                 tabLocador.setIndicator("",getResources().getDrawable(R.drawable.home));
-                tabLocador.setContent(new Intent(this, TabLocatarioActivity.class).putExtra("usuario", (Parcelable) usuarioLogado));
+                tabLocador.setContent(new Intent(this, TabLocatarioActivity.class).putExtra("usuario",usuarioLogado));
                 tbMain.addTab(tabLocador);
+
+                TabHost.TabSpec tabChatLocatario = tbMain.newTabSpec("Aba Chat Locatario");
+                tabChatLocatario.setIndicator("",getResources().getDrawable(R.drawable.chat));
+                tabChatLocatario.setContent(new Intent(this, LocatarioMatchActivity.class).putExtra("usuario",usuarioLogado));
+                tbMain.addTab(tabChatLocatario);
                 break;
             case R.id.cadastro_rbLocador:
                 //PERFIL LOCATARIO
                 TabHost.TabSpec tabLocatario = tbMain.newTabSpec("Aba Locatario");
                 tabLocatario.setIndicator("", getResources().getDrawable(R.drawable.add));
-                tabLocatario.setContent(new Intent(this, LocadorCadastroActivity.class).putExtra("usuario", (Parcelable) usuarioLogado));
+                tabLocatario.setContent(new Intent(this, LocadorCadastroActivity.class).putExtra("usuario",usuarioLogado));
                 tbMain.addTab(tabLocatario);
 
                 TabHost.TabSpec tabLista = tbMain.newTabSpec("Aba Lista");
                 tabLista.setIndicator("", getResources().getDrawable(R.drawable.lista));
-                tabLista.setContent(new Intent(this, CandidatosActivity.class).putExtra("usuario", (Parcelable) usuarioLogado));
+                tabLista.setContent(new Intent(this, CandidatosActivity.class).putExtra("usuario", usuarioLogado));
                 tbMain.addTab(tabLista);
         }
 
